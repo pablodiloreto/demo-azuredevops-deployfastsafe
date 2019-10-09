@@ -236,6 +236,37 @@ Una vez finalizada la tarea, podremos ver el cambio en el sitio de "Dev Internal
 
 ![](images/pdiloreto-deployfastsafe-0025.png)
 
+El sitio web con la URL original se encuentra funcional.
+
+#### Aprobación de Pipeline para Dev Canary
+
+Aprobaremos el stage "Dev Canary":
+
+![](images/notfound.png)
+
+Y veremos cómo se inicia el deploy.
+
+![](images/notfound.png)
+
+Minutos más tarde veremos la URL de slot "Canary" con el sitio web ejecutandose:
+
+![](images/notfound.png)
+
+#### Generación de ambiente de Producción para A/B Testing
+
+Contenido pendiente.
+
+#### Modificación de Pipeline para Producción
+
+Contenido pendiente.
+
+#### Despliegue y A/B Testing
+
+Contenido pendiente.
+
+#### Monitoreo
+
+Contenido pendiente.
 
 ### Diapositivas
 
