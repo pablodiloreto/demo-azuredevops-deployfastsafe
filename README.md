@@ -96,7 +96,146 @@ En la sesión de hoy, nos concentraremos en Azure Pipelines, donde implementarem
 
 ### Demo
 
-Contenido de la Demo.
+#### Creación de Azure DevOps Project
+
+Creamos un nuevo proyecto de tipo "DevOps Project" desde la consola de Microsoft Azure.
+
+[Imagen]
+
+Elegimos "Bring your own code" como opción:
+
+[Imagen]
+
+Elegimos la opción de repositorio "GitHub", en caso que no estemos logueados nos va a requerir inicio de sesión.
+Asimismo, seleccionamos el repositorio (fork) del proyecto indicado más arriba en el inicio del tutorial.
+Por último elegimos el branch "master".
+
+[Imagen]
+
+Vamos a seleccionar que nuestra aplicación NO ES dockerizada.
+Vamos a seleccionar el runtime "Node.js".
+
+[Imagen]
+
+Seleccionaremos la opción de "Linux Web App".
+En "Application Settings" vamos a indicar los siguientes datos:
+* Path to application code: src/theweatherapp-nodejs
+* Version: Node.js 10.1
+* Task Runner: None
+* Startup Command: node server.js
+
+[Imagen]
+
+Completaremos las últimas opciones para poder crear el "DevOps Project":
+* Project name: indicar un nombre, por ejemplo "demo-TheWeatherApp-xxxx".
+* Azure DevOps Organization: especificar una pre-existente o ver "Additional settings" más adelante.
+* Subscription: elegir una suscripción (se requiere una).
+* Web app name: indicaremos un nombre que se relacione con "Dev".
+* Location & Pricing tier: seleccionar según elección propia.
+
+[Imagen]
+
+En opciones avanzadas desplegaremos más opciones:
+* Resource Group: según elección personal.
+* Application Insights Location: según elección personal.
+* Pricint tier: según elección personal.
+* DevOps Organization: como dijimos antes, en caso de no tener ninguna organización aquí se podrá crear una.
+
+[Imagen]
+
+Le damos clic en "Done" y aguardamos a la creación.
+
+#### Muestra de la App
+
+Mientras esperamos que el DevOps Project de Azure se cree, vamos a mostrar la app en un entorno local con VSCode.
+
+#### Muestra de Primer Despliegue y Pipelines
+
+Mostraremos el primer despliegue realizado en la home de DevOps Projects:
+
+[Imagen home DevOps Projects]
+
+Mostraremos el primer despliegue y pipeline ejecutado correctamente desde Azure DevOps Pipelines:
+
+[Imagen]
+
+#### Creación de Slot para Dev Canary
+
+Vamos a generar un "Slot" en Azure App Service para poder brindar mayor flexibilidad en el despliegue.
+A este slot lo llamaremos "canary" y lo clonaremos de la app de "production":
+
+[Imagen]
+
+El restulado será este:
+
+[Imagen]
+
+#### Modificación de Pipeline de Despliegue
+
+Ahora vamos a modificar el pipeline de despliegue para reflejar un "ambiente" más en la solución a desplegar.
+Ingresamos al pipeline de CD y lo editamos:
+
+[Imagen]
+
+Clonamos el "Stage" de Dev:
+
+[Imagen]
+
+Ingresamos al nuevo "Stage" que se llamará "Copy of dev" y lo editamos con el nombre "Dev Canary":
+
+[Imagen]
+
+Ingresamos al "Job" y "Tasks" para editar las tareas:
+
+[Imagen]
+
+Allí editamos el paso "Deploy Azure App Service" y seleccionamos desplegarlos a un "Slot" y elegimos el slot "Canary":
+
+[Imagen]
+
+Elegiremos una pre-condición antes de avanzar. Seleccionaremos "Pre Conditions":
+
+[Imagen]
+
+Modificaremos la opción "Pre-deployment approvals" y elegiremos quién lo aprueba:
+
+[Imagen]
+
+Salvamos y dejamos un comentario sobre nuestra modificación:
+
+[Imagen]
+
+Cambiamos el nombre al stage "Dev" por "Dev Internal" para reflejar una situación probable en nuestro ambiente.
+
+[Imagen]
+
+#### Modificación de la App para segundo despliegue y Análisis de Pipelines
+
+Realizamos una modificación en nuestra app (por ejemplo cambiar de grados centígrados a Celsius). Ingresamos a "server.js" y modificamos la siguiente linea:
+
+[Imagen]
+
+Comiteamos, pusheamos a master y aguardamos los cambios en el pipeline.
+Pronto veremos que la tarea se está ejecutando:
+
+[Imagen]
+
+Y también veremos cómo se agrega el "Stage" al DevOps Project:
+
+[Imagen]
+
+Mostraremos detalles del Pipeline:
+
+[Imagen]
+
+Y de su log:
+
+[Imagen]
+
+Una vez finalizada la tarea, podremos ver el cambio en el sitio de "Dev Internal". No obstante, aún quedará pendiente la aprobación para pasar al ambiente (slot con URL única) de "Dev Canary":
+
+[Imagen]
+
 
 ### Diapositivas
 
