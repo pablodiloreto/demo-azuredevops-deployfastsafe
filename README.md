@@ -100,22 +100,22 @@ En la sesión de hoy, nos concentraremos en Azure Pipelines, donde implementarem
 
 Creamos un nuevo proyecto de tipo "DevOps Project" desde la consola de Microsoft Azure.
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0024.png)
 
 Elegimos "Bring your own code" como opción:
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0023.png)
 
 Elegimos la opción de repositorio "GitHub", en caso que no estemos logueados nos va a requerir inicio de sesión.
 Asimismo, seleccionamos el repositorio (fork) del proyecto indicado más arriba en el inicio del tutorial.
 Por último elegimos el branch "master".
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0022.png)
 
 Vamos a seleccionar que nuestra aplicación NO ES dockerizada.
 Vamos a seleccionar el runtime "Node.js".
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0021.png)
 
 Seleccionaremos la opción de "Linux Web App".
 En "Application Settings" vamos a indicar los siguientes datos:
@@ -124,7 +124,7 @@ En "Application Settings" vamos a indicar los siguientes datos:
 * Task Runner: None
 * Startup Command: node server.js
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0020.png)
 
 Completaremos las últimas opciones para poder crear el "DevOps Project":
 * Project name: indicar un nombre, por ejemplo "demo-TheWeatherApp-xxxx".
@@ -133,7 +133,7 @@ Completaremos las últimas opciones para poder crear el "DevOps Project":
 * Web app name: indicaremos un nombre que se relacione con "Dev".
 * Location & Pricing tier: seleccionar según elección propia.
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0019.png)
 
 En opciones avanzadas desplegaremos más opciones:
 * Resource Group: según elección personal.
@@ -141,7 +141,7 @@ En opciones avanzadas desplegaremos más opciones:
 * Pricint tier: según elección personal.
 * DevOps Organization: como dijimos antes, en caso de no tener ninguna organización aquí se podrá crear una.
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0018.png)
 
 Le damos clic en "Done" y aguardamos a la creación.
 
@@ -153,88 +153,88 @@ Mientras esperamos que el DevOps Project de Azure se cree, vamos a mostrar la ap
 
 Mostraremos el primer despliegue realizado en la home de DevOps Projects:
 
-[Imagen home DevOps Projects]
+![](images/pdiloreto-deployfastsafe-0017.png)
 
 Mostraremos el primer despliegue y pipeline ejecutado correctamente desde Azure DevOps Pipelines:
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0016.png)
 
 #### Creación de Slot para Dev Canary
 
 Vamos a generar un "Slot" en Azure App Service para poder brindar mayor flexibilidad en el despliegue.
 A este slot lo llamaremos "canary" y lo clonaremos de la app de "production":
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0015.png)
 
 El restulado será este:
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0014.png)
 
 #### Modificación de Pipeline de Despliegue
 
 Ahora vamos a modificar el pipeline de despliegue para reflejar un "ambiente" más en la solución a desplegar.
 Ingresamos al pipeline de CD y lo editamos:
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0013.png)
 
 Clonamos el "Stage" de Dev:
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0012.png)
 
 Ingresamos al nuevo "Stage" que se llamará "Copy of dev" y lo editamos con el nombre "Dev Canary":
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0011.png)
 
 Ingresamos al "Job" y "Tasks" para editar las tareas:
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0010.png)
 
 Allí editamos el paso "Deploy Azure App Service" y seleccionamos desplegarlos a un "Slot" y elegimos el slot "Canary":
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0009.png)
 
-Elegiremos una pre-condición antes de avanzar. Seleccionaremos "Pre Conditions":
+Elegiremos una pre-condición antes de avanzar. Seleccionaremos "Pre-deployment conditions":
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0004.png)
 
 Modificaremos la opción "Pre-deployment approvals" y elegiremos quién lo aprueba:
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0003.png)
 
 Salvamos y dejamos un comentario sobre nuestra modificación:
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0008.png)
 
 Cambiamos el nombre al stage "Dev" por "Dev Internal" para reflejar una situación probable en nuestro ambiente.
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0007.png)
 
 #### Modificación de la App para segundo despliegue y Análisis de Pipelines
 
 Realizamos una modificación en nuestra app (por ejemplo cambiar de grados centígrados a Celsius). Ingresamos a "server.js" y modificamos la siguiente linea:
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0006.png)
 
 Comiteamos, pusheamos a master y aguardamos los cambios en el pipeline.
 Pronto veremos que la tarea se está ejecutando:
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0005.png)
 
 Y también veremos cómo se agrega el "Stage" al DevOps Project:
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0002.png)
 
 Mostraremos detalles del Pipeline:
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0001.png)
 
 Y de su log:
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0000.png)
 
 Una vez finalizada la tarea, podremos ver el cambio en el sitio de "Dev Internal". No obstante, aún quedará pendiente la aprobación para pasar al ambiente (slot con URL única) de "Dev Canary":
 
-[Imagen]
+![](images/pdiloreto-deployfastsafe-0025.png)
 
 
 ### Diapositivas
