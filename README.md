@@ -27,7 +27,7 @@ Este material fue generado por [Pablo Ariel Di Loreto](https://www.linkedin.com/
 
 ![](images/pdiloreto-deployfastsafe-GrupoAlgeiba.png)
 
-Este material fue generado sobre la idea de Microsoft que figura en el siguiente repositorio: https://github.com/microsoft/IgniteTheTour/tree/main/DEV%20-%20Building%20your%20Applications%20for%20the%20Cloud/DEV20
+Este material fue generado sobre la idea de Microsoft que figura en [este repositorio](https://github.com/microsoft/IgniteTheTour/tree/main/DEV%20-%20Building%20your%20Applications%20for%20the%20Cloud/DEV20).
 
 # DISCLAIMER
 
