@@ -2,7 +2,7 @@
 
 La implementación de aplicaciones ha cambiado drásticamente a lo largo de los años: desde aquellas tediosas tareas manuales reemplazadas por rutinas con guiones, hasta hoy donde aún más fácil con los servicios en la nube.
 
-En esta charla, profundizaremos en la automatización y la implementación continua de aplicaciones con los Servicios de Microsoft Azure. Comenzaremos con lo básico, discutiendo las operaciones automatizadas que los desarrolladores controlan (DevOps) como las pruebas A/B y las aprobaciones de despliegue automatizadas. Luego lo llevaremos por completo a la nube utilizando el servicio "Azure DevOps Projects", mostrándote cómo puede automatizar la implementación de una aplicación web.
+Este repositorio tiene material correspondiente a una charla que se dió por primera vez en el año 2019, y que fue evolucionando. ¿Cuál es el foco? Profundizar en la automatización y la implementación continua de aplicaciones con los Servicios de Microsoft Azure. Comenzaremos con lo básico, discutiendo las operaciones automatizadas que los desarrolladores controlan (DevOps) como las pruebas A/B y las aprobaciones de despliegue automatizadas. Luego lo llevaremos por completo a la nube utilizando el servicio "Azure DevOps Projects", mostrándote cómo puede automatizar la implementación de una aplicación web.
 
 ## Material de Consulta
 
@@ -23,11 +23,11 @@ También brindamos los siguientes links adicionales:
 * [Azure DevOps Documentation](https://docs.microsoft.com/en-us/azure/devops/)
 * [DevOps Resource Center](https://docs.microsoft.com/en-us/azure/devops/learn/)
 
-Este material fue generado por [Pablo Ariel Di Loreto](https://www.linkedin.com/in/pablodiloreto/) que es el Service Delivery Manager de Algeiba Dev, empresa del [Grupo Algeiba](https://www.algeiba.com).
+Este material fue generado por [Pablo Ariel Di Loreto](https://www.linkedin.com/in/pablodiloreto/) que en el año 2019 era el CTO de Algeiba Dev, empresa del [Grupo Algeiba](https://www.algeiba.com).
 
 ![](images/pdiloreto-deployfastsafe-GrupoAlgeiba.png)
 
-Este material fue generado sobre la idea de Microsoft que figura en el siguiente repositorio: https://github.com/microsoft/IgniteTheTour/tree/master/DEV%20-%20Building%20your%20Applications%20for%20the%20Cloud/DEV20
+Este material fue generado sobre la idea de Microsoft que figura en el siguiente repositorio: https://github.com/microsoft/IgniteTheTour/tree/main/DEV%20-%20Building%20your%20Applications%20for%20the%20Cloud/DEV20
 
 # DISCLAIMER
 
